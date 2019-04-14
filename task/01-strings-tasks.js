@@ -239,7 +239,11 @@ function getRectangleString(width, height) {
  *
  */
 function encodeToRot13(str) {
-    throw new Error('Not implemented');
+
+return (str+'').replace(/[a-zA-Z]/gi,function(s){
+    return String.fromCharCode(s.charCodeAt(0)+(s.toLowerCase()<'n'?13:-13))
+})
+
 }
 
 /**
@@ -256,7 +260,7 @@ function encodeToRot13(str) {
  *   isString(new String('test')) => true
  */
 function isString(value) {
-    throw new Error('Not implemented');
+    return typeof value === 'string' || value instanceof String
 }
 
 
